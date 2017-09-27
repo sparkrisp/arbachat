@@ -39,7 +39,7 @@ const bankingServices = require('./banking_services');
 const WatsonDiscoverySetup = require('./lib/watson-discovery-setup');
 const WatsonConversationSetup = require('./lib/watson-conversation-setup');
 
-const DEFAULT_NAME = 'watson-banking-chatbot';
+const DEFAULT_NAME = 'conversacionArbaChatbot';
 const DISCOVERY_ACTION = 'rnr'; // Replaced RnR w/ Discovery but Conversation action is still 'rnr'.
 const DISCOVERY_DOCS = [
   './data/discovery/docs/BankFaqRnR-DB-Failure-General.docx',
@@ -98,7 +98,7 @@ const conversation = watson.conversation({
 
 let workspaceID; // workspaceID will be set when the workspace is created or validated.
 const conversationSetup = new WatsonConversationSetup(conversation);
-const workspaceJson = JSON.parse(fs.readFileSync('data/conversation/workspaces/banking.json'));
+const workspaceJson = JSON.parse(fs.readFileSync('data/conversation/workspaces/arbaChat.json'));
 const conversationSetupParams = { default_name: DEFAULT_NAME, workspace_json: workspaceJson };
 conversationSetup.setupConversationWorkspace(conversationSetupParams, (err, data) => {
   if (err) {
